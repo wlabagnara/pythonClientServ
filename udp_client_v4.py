@@ -52,6 +52,7 @@ print("A four-byte sequence number will be added to message\n\r")
 print("(Create packet error with a Control-C or Terminate with a Control-Break)\n\r")
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # IPv4 UDP
+sock.bind(('0.0.0.0', UDP_PORT))                        # source UDP port (setting same as destination port)
 
 packet_err = 0 # generate packet error logic
 
